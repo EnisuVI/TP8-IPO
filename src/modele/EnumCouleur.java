@@ -8,4 +8,13 @@ public enum EnumCouleur {
     VERT (Color.green),
     NOIR (Color.black),
     JAUNE (Color.yellow);
+
+    private Color color;
+    EnumCouleur(Color color) {
+        if(color != null) this.color = color;
+    }
+
+    public Color getColor() {
+        return color;
+    }
 }

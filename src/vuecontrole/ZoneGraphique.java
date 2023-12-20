@@ -9,10 +9,12 @@ import java.awt.event.MouseMotionListener;
 public class ZoneGraphique extends JPanel implements MouseMotionListener {
 
     private BarreBasse barreBasse;
-    public ZoneGraphique(BarreBasse barreBasse){
+    private BarreHaute barreHaute;
+    public ZoneGraphique(BarreBasse barreBasse, BarreHaute barreHaute){
         super();
         if(barreBasse != null) this.barreBasse = barreBasse;
         else this.barreBasse = new BarreBasse();
+        if(barreHaute != null) this.barreHaute = barreHaute;
         this.addMouseMotionListener(this);
         this.setBackground(Color.white);
     }
