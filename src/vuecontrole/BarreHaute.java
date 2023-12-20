@@ -33,6 +33,6 @@ public class BarreHaute extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JComboBox selectionnee = (JComboBox) e.getSource();
-        System.out.println("Valeur sélectionnée" + selectionnee.getSelectedItem());
+        System.out.println("Valeur sélectionnée : " + selectionnee.getSelectedItem());
     }
 }
