@@ -3,6 +3,7 @@ package vuecontrole;
 
 import modele.*;
 import modele.Point;
+import modele.Rectangle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,6 +41,9 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
         switch (formeSelectionnee){
             case DROITE:
                 forme = new Droite(couleurSelectionnee.getColor(), pInit, pFin);
+                break;
+            case RECTANGLE:
+                forme = new Rectangle(couleurSelectionnee.getColor(), pInit, pFin);
                 break;
         }
         if(dessine) this.formeMemorisee.removeLast();
