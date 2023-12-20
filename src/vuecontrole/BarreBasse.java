@@ -28,8 +28,8 @@ public class BarreBasse extends JPanel {
         }
     }
 
-    public void setMessage(JLabel message) {
-        this.message = message;
+    public void setMessage(String message) {
+        this.message.setText(message);
     }
 
     public void setAbscisse(String abscisse) {

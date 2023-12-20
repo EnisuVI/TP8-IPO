@@ -11,6 +11,10 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
 
     private BarreBasse barreBasse;
     private BarreHaute barreHaute;
+
+    private Point pInit;
+
+    private Point pFin;
     public ZoneGraphique(BarreBasse barreBasse, BarreHaute barreHaute){
         super();
         if(barreBasse != null) this.barreBasse = barreBasse;
@@ -19,6 +23,8 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
         this.setBackground(Color.white);
+        this.pInit = new Point(0,0);
+        this.pFin = new Point(0,0);
     }
 
     @Override
@@ -40,11 +46,17 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
     @Override
     public void mousePressed(MouseEvent e) {
         System.out.println("Souris pressée sur un composant");
+        this.pInit = new Point(e.getX(),e.getY());
+        System.out.println(pInit);
+        this.barreBasse.setMessage("Relâcher pour voir la forme");
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
         System.out.println("Souris relachée");
+        this.pFin = new Point(e.getX(), e.getY());
+        System.out.println(pFin);
+        this.barreBasse.setMessage("Cliquer pour initier une forme");
     }
 
     @Override
