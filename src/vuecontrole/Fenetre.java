@@ -7,6 +7,7 @@ public class Fenetre extends JFrame {
 
     private BarreBasse barreBasse;
     private ZoneGraphique zoneGraphique;
+    private EcouteurFenetre ecouteurFenetre;
 
     public Fenetre(){
         super();
@@ -18,6 +19,8 @@ public class Fenetre extends JFrame {
         this.add(barreBasse, BorderLayout.SOUTH);
         this.zoneGraphique = new ZoneGraphique();
         this.add(zoneGraphique, BorderLayout.CENTER);
+        this.ecouteurFenetre = new EcouteurFenetre();
+        this.addWindowListener(ecouteurFenetre);
         this.setVisible(true);
     }
 
