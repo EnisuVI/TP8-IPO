@@ -9,6 +9,9 @@ public class Point {
         this.y = y;
     }
 
+    public Point(Point point){
+        this(point.x, point.y);
+    }
     public int getX() {
         return x;
     }

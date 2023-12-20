@@ -12,8 +12,8 @@ public class Fenetre extends JFrame {
 
     public Fenetre(){
         super();
-        this.setSize(300, 150);
-        this.setTitle("Ma première fenêtre !");
+        this.setSize(1000, 800);
+        this.setTitle("Paint (MacOS version)");
         this.setLocation(100, 200);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.barreBasse = new BarreBasse();
