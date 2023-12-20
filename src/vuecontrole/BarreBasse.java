@@ -1,6 +1,7 @@
 package vuecontrole;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class BarreBasse extends JPanel {
     public JLabel message;
@@ -13,6 +14,10 @@ public class BarreBasse extends JPanel {
         this.abscisse = new JLabel("x : ");
         this.ordonnee = new JLabel("y : ");
         this.add(message);
+        this.add(abscisse);
+        this.add(ordonnee);
+        this.setBackground(Color.green);
+        this.setForeground(Color.white);
     }
 
     public void setMessage(JLabel message) {
