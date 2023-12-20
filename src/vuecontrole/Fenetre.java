@@ -17,7 +17,7 @@ public class Fenetre extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.barreBasse = new BarreBasse();
         this.add(barreBasse, BorderLayout.SOUTH);
-        this.zoneGraphique = new ZoneGraphique();
+        this.zoneGraphique = new ZoneGraphique(barreBasse);
         this.add(zoneGraphique, BorderLayout.CENTER);
         this.ecouteurFenetre = new EcouteurFenetre();
         this.addWindowListener(ecouteurFenetre);

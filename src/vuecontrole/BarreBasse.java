@@ -2,6 +2,7 @@ package vuecontrole;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
 public class BarreBasse extends JPanel {
     public JLabel message;
@@ -20,15 +21,22 @@ public class BarreBasse extends JPanel {
         this.setForeground(Color.white);
     }
 
+    public void deplacementSouris(MouseEvent evt){
+        if(evt != null) {
+            this.setAbscisse("x :" + Integer.toString(evt.getX()));
+            this.setOrdonnee("y :" + Integer.toString(evt.getY()));
+        }
+    }
+
     public void setMessage(JLabel message) {
         this.message = message;
     }
 
-    public void setAbscisse(JLabel abscisse) {
-        this.abscisse = abscisse;
+    public void setAbscisse(String abscisse) {
+        this.abscisse.setText(abscisse);
     }
 
-    public void setOrdonnee(JLabel ordonnee) {
-        this.ordonnee = ordonnee;
+    public void setOrdonnee(String ordonnee) {
+        this.ordonnee.setText(ordonnee);
     }
 }
