@@ -10,6 +10,7 @@ public class Fenetre extends JFrame {
         this.setTitle("Ma première fenêtre !");
         this.setLocation(100, 200);
         this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     public static void main(String[] args) {
        Fenetre maFenetre = new Fenetre();
