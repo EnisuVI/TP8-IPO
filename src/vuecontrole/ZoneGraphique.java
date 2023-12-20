@@ -9,16 +9,17 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.LinkedList;
 
 public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseListener {
 
     private BarreBasse barreBasse;
     private BarreHaute barreHaute;
-
     private Point pInit;
 
     private Point pFin;
     private boolean dessine;
+    private LinkedList<Forme> formeMemorisee;
     public ZoneGraphique(BarreBasse barreBasse, BarreHaute barreHaute){
         super();
         if(barreBasse != null) this.barreBasse = barreBasse;
@@ -29,6 +30,7 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
         this.setBackground(Color.white);
         this.pInit = new Point(0,0);
         this.pFin = new Point(0,0);
+        this.formeMemorisee = new LinkedList<>();
     }
 
     private void dessin(){
@@ -40,13 +42,25 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
                 forme = new Droite(couleurSelectionnee.getColor(), pInit, pFin);
                 break;
         }
-        forme.seDessiner(getGraphics());
+        if(dessine) this.formeMemorisee.removeLast();
+        this.formeMemorisee.add(forme);
+        this.repaint();
     }
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        for(Forme forme : this.formeMemorisee){
+            forme.seDessiner(g);
+        }
+    }
+
+
     @Override
     public void mouseDragged(MouseEvent e) {
         System.out.println("Souris pressée et déplacée");
         this.pFin = new Point(e.getX(), e.getY());
         this.dessin();
+        dessine = true;
     }
 
     @Override
@@ -74,7 +88,7 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
         this.pFin = new Point(e.getX(), e.getY());
         System.out.println(pFin);
         this.barreBasse.setMessage("Cliquer pour initier une forme");
-        this.dessin();
+        dessine = false;
     }
 
     @Override
