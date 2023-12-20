@@ -7,7 +7,9 @@ public enum EnumCouleur {
     BLEU (Color.blue),
     VERT (Color.green),
     NOIR (Color.black),
-    JAUNE (Color.yellow);
+    JAUNE (Color.yellow),
+    BLANC (Color.white),
+    ROSE (Color.pink);
 
     private Color color;
     EnumCouleur(Color color) {

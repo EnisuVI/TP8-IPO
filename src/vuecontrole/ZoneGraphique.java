@@ -45,6 +45,15 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
             case RECTANGLE:
                 forme = new Rectangle(couleurSelectionnee.getColor(), pInit, pFin);
                 break;
+            case CERCLE:
+                forme = new Cercle(couleurSelectionnee.getColor(), pInit, pFin);
+                break;
+            /**case TRIANGLE:
+                forme = new Triangle(couleurSelectionnee.getColor(), pInit, pFin);
+                break;*/
+            case CERCLEPLEIN:
+                forme = new CerclePlein(couleurSelectionnee.getColor(), pInit, pFin);
+                break;
         }
         if(dessine) this.formeMemorisee.removeLast();
         this.formeMemorisee.add(forme);
