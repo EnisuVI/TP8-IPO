@@ -2,11 +2,11 @@ package modele;
 
 import java.awt.*;
 
-public class Cercle extends Forme{
+public class Carre extends Forme {
     private Point pInit;
     private Point pFin;
 
-    public Cercle(Color color, Point pInit, Point pFin) {
+    public Carre(Color color, Point pInit, Point pFin) {
         super(color);
         this.pInit = new Point(pInit);
         this.pFin = new Point(pFin);
@@ -15,6 +15,6 @@ public class Cercle extends Forme{
     @Override
     public void seDessiner(Graphics g){
         super.seDessiner(g);
-        g.drawOval(pInit.getX(), pInit.getY(), pFin.getX() - pInit.getX(), pFin.getX() - pInit.getX());
+        g.drawRect(pInit.getX(), pInit.getY(), pFin.getX() - pInit.getX(), pFin.getX() - pInit.getX());
     }
 }

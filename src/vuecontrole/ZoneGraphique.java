@@ -45,14 +45,23 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
             case RECTANGLE:
                 forme = new Rectangle(couleurSelectionnee.getColor(), pInit, pFin);
                 break;
+            case OVALE:
+                forme = new Ovale(couleurSelectionnee.getColor(), pInit, pFin);
+                break;
+            case TRIANGLE:
+                forme = new Triangle(couleurSelectionnee.getColor(), pInit, pFin);
+                break;
             case CERCLE:
                 forme = new Cercle(couleurSelectionnee.getColor(), pInit, pFin);
                 break;
-            /**case TRIANGLE:
-                forme = new Triangle(couleurSelectionnee.getColor(), pInit, pFin);
-                break;*/
+            case CARRE:
+                forme = new Carre(couleurSelectionnee.getColor(), pInit, pFin);
+                break;
             case CERCLEPLEIN:
                 forme = new CerclePlein(couleurSelectionnee.getColor(), pInit, pFin);
+                break;
+            case CAMION:
+                forme = new Camion(couleurSelectionnee.getColor(), pInit, pFin);
                 break;
         }
         if(dessine) this.formeMemorisee.removeLast();
@@ -112,5 +121,9 @@ public class ZoneGraphique extends JPanel implements MouseMotionListener, MouseL
     @Override
     public void mouseExited(MouseEvent e) {
         System.out.println("Souris sortie du composant");
+    }
+
+    public void effacer(){
+
     }
 }

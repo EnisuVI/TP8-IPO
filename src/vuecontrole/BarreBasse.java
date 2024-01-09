@@ -11,7 +11,7 @@ public class BarreBasse extends JPanel {
 
     public BarreBasse(){
         super();
-        this.message = new JLabel("Joyeux Noël !");
+        this.message = new JLabel("Bonne Année !");
         this.abscisse = new JLabel("x : ");
         this.ordonnee = new JLabel("y : ");
         this.add(message);

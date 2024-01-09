@@ -3,18 +3,18 @@ package modele;
 import java.awt.*;
 
 public class Triangle extends Forme{
-    private Point pInit;
-    private Point pFin;
+    private Point pA;
+    private Point pB;
 
     public Triangle(Color color, Point pInit, Point pFin) {
         super(color);
-        this.pInit = new Point(pInit);
-        this.pFin = new Point(pFin);
+        pA = new Point(pInit);
+        pB = new Point(pFin);
     }
 
     @Override
     public void seDessiner(Graphics g){
         super.seDessiner(g);
-        //g.drawPolygon(pInit.getX(), pInit.getY(), pFin.getX(), pFin.getY());
+        g.drawPolygon(new int[]{pA.getX(), pB.getX(), pA.getX()}, new int[]{pA.getY(), pB.getY(), pB.getY()}, 3);
     }
 }

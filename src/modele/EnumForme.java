@@ -5,9 +5,12 @@ import java.awt.*;
 public enum EnumForme {
     DROITE ("Droite"),
     RECTANGLE ("Rectangle"),
+    OVALE ("Ovale"),
+    TRIANGLE ("Triangle"),
     CERCLE ("Cercle"),
-    TRIANGLE ("Cercle"),
-    CERCLEPLEIN ("Cercle plein");
+    CARRE ("Carre"),
+    CERCLEPLEIN ("Cercle plein"),
+    CAMION ("Camion");
 
     private String nom;
     EnumForme(String s) {

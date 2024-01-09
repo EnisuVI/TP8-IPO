@@ -15,6 +15,6 @@ public class Rectangle extends Forme {
     @Override
     public void seDessiner(Graphics g){
         super.seDessiner(g);
-        g.drawRect(pInit.getX(), pInit.getY(), pFin.getX(), pFin.getY());
+        g.drawRect(pInit.getX(), pInit.getY(), pFin.getX() - pInit.getX(), pFin.getY() - pInit.getY());
     }
 }
